@@ -25,7 +25,7 @@
         <!--Login View Controller-->
         <scene sceneID="9oi-Oa-dNu">
             <objects>
-                <viewController id="fW6-VK-kEz" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginViewController" storyboardIdentifier="LoginViewController" id="fW6-VK-kEz" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhE-dd-1ec">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                 <rect key="frame" x="78" y="320" width="259" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqc-KB-NpC">
                                 <rect key="frame" x="114" y="383" width="54" height="30"/>
@@ -57,7 +57,7 @@
                                     <action selector="onSignUp:" destination="fW6-VK-kEz" eventType="touchUpInside" id="uBB-1u-Off"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS2-BT-Z7E">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="LoginViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS2-BT-Z7E">
                                 <rect key="frame" x="240" y="383" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
@@ -72,11 +72,46 @@
                     <connections>
                         <outlet property="passwordTextField" destination="B4x-wQ-Fs2" id="euh-hY-z6k"/>
                         <outlet property="usernameTextField" destination="ENJ-Jl-6N3" id="kZd-Q2-bCd"/>
+                        <segue destination="fiB-Dd-jwt" kind="presentation" identifier="loginSegue" id="fb2-Ui-LvW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzI-Gx-ic3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="635.49107142857144"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="l11-Q3-KnM">
+            <objects>
+                <viewController restorationIdentifier="ChatViewController" storyboardIdentifier="ChatViewController" id="kYc-lf-ZHh" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OoE-PU-duY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CBg-ts-tT1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="ypg-kH-qxC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yh-oM-Pvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855.072463768116" y="634.82142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ET-6f-FDc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fiB-Dd-jwt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bKc-FU-S3U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kYc-lf-ZHh" kind="relationship" relationship="rootViewController" id="whs-G1-LEo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eA-qK-OfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="634.82142857142856"/>
         </scene>
     </scenes>
 </document>

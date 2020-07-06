@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "ChatViewController.h"
 
 @interface LoginViewController ()
 
@@ -71,7 +72,8 @@
            } else {
                NSLog(@"User registered successfully");
                
-               // manually segue to logged in view
+               [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+
            }
        }];
     }
@@ -118,21 +120,23 @@
            } else {
                NSLog(@"User logged in successfully");
                
-               // display view controller that needs to shown after successful login
+               [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+    
            }
        }];
         
     }
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 @end
